@@ -83,48 +83,48 @@ describe("Arrays", function() {
       });
       it("binarySearchFindFirst should not throw a TypeError", function() {
          expect(function() {
-            Arrays.binarySearchFindFirst(new Int8Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindFirst(new Int8Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindFirst(new Uint8Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindFirst(new Uint8Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindFirst(new Int16Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindFirst(new Int16Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindFirst(new Uint16Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindFirst(new Uint16Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindFirst(new Int32Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindFirst(new Int32Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindFirst(new Float32Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindFirst(new Float32Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindFirst(new Float64Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindFirst(new Float64Array(1), 42);
          }).not.toThrow();
       });
       it("binarySearchFindLast should not throw a TypeError", function() {
          expect(function() {
-            Arrays.binarySearchFindLast(new Int8Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindLast(new Int8Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindLast(new Uint8Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindLast(new Uint8Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindLast(new Int16Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindLast(new Int16Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindLast(new Uint16Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindLast(new Uint16Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindLast(new Int32Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindLast(new Int32Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindLast(new Float32Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindLast(new Float32Array(1), 42);
          }).not.toThrow();
          expect(function() {
-            Arrays.binarySearchFindLast(new Float64Array(1), 42, Arrays.NUMERIC_COMPARATOR);
+            Arrays.binarySearchFindLast(new Float64Array(1), 42);
          }).not.toThrow();
       });
    });
@@ -184,10 +184,10 @@ describe("Arrays", function() {
          expect(Arrays.binarySearch([], needle, Arrays.NUMERIC_COMPARATOR)).toBe(-1);
       });
       it("binarySearchFindFirst should return -1", function() {
-         expect(Arrays.binarySearchFindFirst([], needle, Arrays.NUMERIC_COMPARATOR)).toBe(-1);
+         expect(Arrays.binarySearchFindFirst([], needle)).toBe(-1);
       });
       it("binarySearchFindLast should return -1", function() {
-         expect(Arrays.binarySearchFindLast([], needle, Arrays.NUMERIC_COMPARATOR)).toBe(-1);
+         expect(Arrays.binarySearchFindLast([], needle)).toBe(-1);
       });
    });
 
@@ -220,10 +220,10 @@ describe("Arrays", function() {
                expect(Arrays.binarySearch(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
             });
             it("binarySearchFindFirst should return " + expected, function() {
-               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
+               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_NO_DUPES, needle)).toBe(expected);
             });
             it("binarySearchFindLast should return " + expected, function() {
-               expect(Arrays.binarySearchFindLast(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
+               expect(Arrays.binarySearchFindLast(TEST_ARRAY_NO_DUPES, needle)).toBe(expected);
             });
          });
          describe("and the needle is greater than the value in the last element", function() {
@@ -232,10 +232,10 @@ describe("Arrays", function() {
                expect(Arrays.binarySearch(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(~(TEST_ARRAY_NO_DUPES.length));
             });
             it("binarySearchFindFirst should return the complement of the length of the array", function() {
-               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(~(TEST_ARRAY_NO_DUPES.length));
+               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_NO_DUPES, needle)).toBe(~(TEST_ARRAY_NO_DUPES.length));
             });
             it("binarySearchFindLast should return the complement of the length of the array", function() {
-               expect(Arrays.binarySearchFindLast(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(~(TEST_ARRAY_NO_DUPES.length));
+               expect(Arrays.binarySearchFindLast(TEST_ARRAY_NO_DUPES, needle)).toBe(~(TEST_ARRAY_NO_DUPES.length));
             });
          });
          describe("and the needle is between the values in the first and second elements", function() {
@@ -245,10 +245,10 @@ describe("Arrays", function() {
                expect(Arrays.binarySearch(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
             });
             it("binarySearchFindFirst should return " + expected, function() {
-               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
+               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_NO_DUPES, needle)).toBe(expected);
             });
             it("binarySearchFindLast should return " + expected, function() {
-               expect(Arrays.binarySearchFindLast(TEST_ARRAY_NO_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
+               expect(Arrays.binarySearchFindLast(TEST_ARRAY_NO_DUPES, needle)).toBe(expected);
             });
          });
       });
@@ -285,10 +285,10 @@ describe("Arrays", function() {
                expect(Arrays.binarySearch(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
             });
             it("binarySearchFindFirst should return " + expected, function() {
-               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
+               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_WITH_DUPES, needle)).toBe(expected);
             });
             it("binarySearchFindLast should return " + expected, function() {
-               expect(Arrays.binarySearchFindLast(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
+               expect(Arrays.binarySearchFindLast(TEST_ARRAY_WITH_DUPES, needle)).toBe(expected);
             });
          });
          describe("and the needle is greater than the value in the last element", function() {
@@ -297,10 +297,10 @@ describe("Arrays", function() {
                expect(Arrays.binarySearch(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(~(TEST_ARRAY_WITH_DUPES.length));
             });
             it("binarySearchFindFirst should return the complement of the length of the array", function() {
-               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(~(TEST_ARRAY_WITH_DUPES.length));
+               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_WITH_DUPES, needle)).toBe(~(TEST_ARRAY_WITH_DUPES.length));
             });
             it("binarySearchFindLast should return the complement of the length of the array", function() {
-               expect(Arrays.binarySearchFindLast(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(~(TEST_ARRAY_WITH_DUPES.length));
+               expect(Arrays.binarySearchFindLast(TEST_ARRAY_WITH_DUPES, needle)).toBe(~(TEST_ARRAY_WITH_DUPES.length));
             });
          });
 
@@ -311,10 +311,10 @@ describe("Arrays", function() {
                expect(Arrays.binarySearch(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
             });
             it("binarySearchFindFirst should return " + expected, function() {
-               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
+               expect(Arrays.binarySearchFindFirst(TEST_ARRAY_WITH_DUPES, needle)).toBe(expected);
             });
             it("binarySearchFindLast should return " + expected, function() {
-               expect(Arrays.binarySearchFindLast(TEST_ARRAY_WITH_DUPES, needle, Arrays.NUMERIC_COMPARATOR)).toBe(expected);
+               expect(Arrays.binarySearchFindLast(TEST_ARRAY_WITH_DUPES, needle)).toBe(expected);
             });
          });
       });

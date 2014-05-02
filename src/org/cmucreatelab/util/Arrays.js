@@ -92,9 +92,9 @@ else {
     * 2) the needle is undefined
     * 3) the comparator is not a function
     *
-    * @param haystack the array to search
-    * @param needle the number to find
-    * @param comparator the comparator to use
+    * @param {Array} haystack the array to search
+    * @param {number} needle the number to find
+    * @param {function} comparator the comparator to use
     * @returns {int} If found, it returns the index of the element; otherwise it returns a negative number which is the
     * complement of the insertion index.
     */
@@ -108,7 +108,7 @@ else {
          if (typeof haystack.buffer !== 'object' ||
              typeof haystack.byteOffset !== 'number' ||
              typeof haystack.length !== 'number') {
-            throw new TypeError("Arrays.binarySearch: first argument is not an array 2");
+            throw new TypeError("Arrays.binarySearch: first argument is not an array");
          }
       }
 
@@ -120,6 +120,8 @@ else {
          throw new TypeError("Arrays.binarySearch: third argument is not a function");
       }
 
+      // TODO: Find my source for this and give credit.  Can't remember where I found it...
+
       var low = 0,
             mid = 0,
             high = haystack.length - 1,
@@ -127,7 +129,9 @@ else {
 
       while (low <= high) {
          /* Note that "(low + high) >>> 1" may overflow, and results in a typecast
-          * to double (which gives the wrong results). */
+          * to double (which gives the wrong results).
+          * See: http://googleresearch.blogspot.com/2006/06/extra-extra-read-all-about-it-nearly.html
+          */
          mid = low + (high - low >> 1);
          cmp = comparator(haystack[mid], needle) | 0;
 
@@ -160,8 +164,8 @@ else {
     * 1) the haystack is undefined, null, or not an array.
     * 2) the needle is undefined
     *
-    * @param haystack the array to search
-    * @param needle the number to find
+    * @param {Array} haystack the array to search
+    * @param {number} needle the number to find
     * @returns {int} if needle exists in haystack, the index of the first occurrence; otherwise returns the complement
     * of the insertion index.
     */
@@ -183,8 +187,8 @@ else {
     * 1) the haystack is undefined, null, or not an array.
     * 2) the needle is undefined
     *
-    * @param haystack the array to search
-    * @param needle the number to find
+    * @param {Array} haystack the array to search
+    * @param {number} needle the number to find
     * @returns {int} if needle exists in haystack, the index of the last occurrence; otherwise returns the complement
     * of the insertion index.
     */
@@ -200,4 +204,3 @@ else {
    };
 
 })();
-
